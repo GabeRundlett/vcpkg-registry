@@ -1,1 +1,9 @@
-{"versions":[{"version-string": "nightly","port-version": 79,"git-tree": "11ddce83bbf90fd6c16f849accf86f8329dca1b1"}]}
+{
+    "versions": [
+        {
+            "version-semver": "1.0.0",
+            "port-version": 0,
+            "git-tree": "218c06ce1e1c070b3d7b48e87a5cc9530c72081a"
+        }
+    ]
+}

@@ -1,25 +1,17 @@
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
     URL https://github.com/GabeRundlett/gvox
-    REF d349cadb9f6cbdffee3473d1338a3bb04851c4d3
+    REF 3303f27de31b1f303193a6e11043df904a05aace
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
     file-io WITH_FILE_IO
-    zlib WITH_ZLIB
-    gzip WITH_GZIP
 )
 
-set(GVOX_DEFINES)
+list(APPEND GVOX_DEFINES "-DGVOX_ENABLE_THREADSAFETY=true")
 if(WITH_FILE_IO)
     list(APPEND GVOX_DEFINES "-DGVOX_ENABLE_FILE_IO=true")
-endif()
-if(WITH_ZLIB)
-    list(APPEND GVOX_DEFINES "-DGVOX_ENABLE_ZLIB=true")
-endif()
-if(WITH_GZIP)
-    list(APPEND GVOX_DEFINES "-DGVOX_ENABLE_GZIP=true")
 endif()
 
 vcpkg_configure_cmake(
